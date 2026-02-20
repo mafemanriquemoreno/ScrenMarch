@@ -1,18 +1,17 @@
+import com.sun.source.tree.ReturnTree;
+
 public class Pelicula {
-    String nombre;
+   String nombre;
     int fechaDeLanzamiento;
-    int DuracionEnMinutos;
+    int duracionEnMinutos;
     boolean incluidoEnElPlan;
-    float sumaDeEvaluaciones;
+    double sumaDeEvaluaciones;
     int totalDeLasEvaluaciones;
-    double sumaDeLasEvaluaciones;
 
     void muestraFichaTecnica(){
         System.out.println("El nombre de la pelicula es: "+ nombre);
         System.out.println("Su fecha de lanzamiento es: "+ fechaDeLanzamiento);
-        System.out.println("Duracion en minutos: "+ DuracionEnMinutos + " minutos.");
-        System.out.println("");
-
+        System.out.println("Duracion en minutos: "+ duracionEnMinutos + " minutos.");
     }
 
     void evalua(double nota){
@@ -21,8 +20,10 @@ public class Pelicula {
     }
 
     double calculaMedia(){
-        return sumaDeEvaluaciones/totalDeLasEvaluaciones;
-
+        if (totalDeLasEvaluaciones == 0) {
+            return 0;
+        }
+        return sumaDeEvaluaciones / totalDeLasEvaluaciones;
     }
 
 

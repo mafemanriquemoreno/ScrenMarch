@@ -3,17 +3,17 @@ public class Principal {
         Pelicula miPelicula = new Pelicula();
         miPelicula.nombre = "Spider-man: no way home";
         miPelicula.fechaDeLanzamiento = 2021;
-        miPelicula.DuracionEnMinutos = 148;
+        miPelicula.duracionEnMinutos = 148;
+        miPelicula.incluidoEnElPlan = false;
 
         miPelicula.muestraFichaTecnica();
         miPelicula.evalua(7.8);
         miPelicula.evalua(8.2);
         miPelicula.evalua(9);
 
-        System.out.println("Suma de las evaluciones: "+  miPelicula.sumaDeLasEvaluaciones);
-        System.out.println(miPelicula.sumaDeLasEvaluaciones);
+        System.out.println("Suma de las evaluciones: "+  miPelicula.sumaDeEvaluaciones);
         System.out.println("Total de evaluaciones de la pelicula: " + miPelicula.totalDeLasEvaluaciones);
-        System.out.println("La media en calificaciones de la pelicula es es de : "+ miPelicula.calculaMedia());
+        System.out.println("Media de evaluaciones: "+ miPelicula.calculaMedia());
 
 
         System.out.println("");
@@ -21,7 +21,7 @@ public class Principal {
         Pelicula otraPelicula = new Pelicula();
         otraPelicula.nombre = "Matrix";
         otraPelicula.fechaDeLanzamiento = 1999;
-        otraPelicula.DuracionEnMinutos = 120;
+        otraPelicula.duracionEnMinutos = 120;
 
         otraPelicula.muestraFichaTecnica();
 
@@ -30,7 +30,7 @@ public class Principal {
         otraPelicula.evalua(10);
         otraPelicula.evalua(7.8);
 
-        System.out.println("Suma de las evaluciones: " + otraPelicula.sumaDeLasEvaluaciones);
+        System.out.println("Suma de las evaluciones: " + otraPelicula.sumaDeEvaluaciones);
         System.out.println("Total de evaluaciones de la pelicula: " + otraPelicula.totalDeLasEvaluaciones);
         System.out.println("La media en calificaciones de la pelicula es es de : "+ otraPelicula.calculaMedia());
     }
