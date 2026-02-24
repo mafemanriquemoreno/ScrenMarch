@@ -1,3 +1,6 @@
+import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
+import com.aluracursos.screenmatch.calculos.FiltroRecomendaciones;
+import com.aluracursos.screenmatch.modelos.Episodios;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 
@@ -25,19 +28,27 @@ public class Principal {
         System.out.println(casaDragon.getDuracionEnMinutos());
         casaDragon.muestraFichaTecnica();
 
+        Pelicula otraPelicula = new Pelicula();
+        otraPelicula.setNombre("Matrix");
+        otraPelicula.setFechaDeLanzamiento(1999);
+        otraPelicula.setDuracionEnMinutos(130);
+        otraPelicula.muestraFichaTecnica();
 
+        CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+        calculadora.incluye(miPelicula);
+        calculadora.incluye(casaDragon);
+        calculadora.incluye(otraPelicula);
+        System.out.println("Tiempo estimado apra ver tus titulos favoritos: " + calculadora.getTiempoTotal() + " minutos");
 
+        FiltroRecomendaciones filtroRecomendaciones = new FiltroRecomendaciones();
+        filtroRecomendaciones.filtra(miPelicula);
 
+        Episodios episodios = new Episodios();
+        episodios.setNumero(1);
+        episodios.getNombre("Origenes");
+        episodios.setSerie(casaDragon);
+        episodios.setTotalVisualizaciones(75);
 
-
-
-//        com.aluracursos.screenmatch.modelos.Pelicula otraPelicula = new com.aluracursos.screenmatch.modelos.Pelicula();
-//        otraPelicula.nombre = "Matrix";
-//        otraPelicula.fechaDeLanzamiento = 1999;
-//        otraPelicula.duracionEnMinutos = 120;
-//
-//        otraPelicula.muestraFichaTecnica();
-//        System.out.println("Total de evaluaciones de la pelicula: " + otraPelicula.getTotalDeLasEvaluaciones());
-//        System.out.println("La media en calificaciones de la pelicula es es de : "+ otraPelicula.calculaMedia());
+        filtroRecomendaciones.filtra(episodios);
     }
 }

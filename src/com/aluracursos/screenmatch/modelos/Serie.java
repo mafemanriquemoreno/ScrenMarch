@@ -1,6 +1,6 @@
 package com.aluracursos.screenmatch.modelos;
 
-public class Serie extends TItulo {
+public class Serie extends Titulo {
 
     int temporadas;
     int episodiosPorTemporada;
