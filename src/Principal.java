@@ -1,37 +1,43 @@
+import com.aluracursos.screenmatch.modelos.Pelicula;
+import com.aluracursos.screenmatch.modelos.Serie;
+
 public class Principal {
     public static void main(String[] args) {
         Pelicula miPelicula = new Pelicula();
-        miPelicula.nombre = "Spider-man: no way home";
-        miPelicula.fechaDeLanzamiento = 2021;
-        miPelicula.duracionEnMinutos = 148;
-        miPelicula.incluidoEnElPlan = false;
+        miPelicula.setNombre("Spider-man no way home");
+        miPelicula.setFechaDeLanzamiento(2021);
+        miPelicula.setDuracionEnMinutos(140);
+        miPelicula.setIncluidoEnElPlan(true);
 
         miPelicula.muestraFichaTecnica();
         miPelicula.evalua(7.8);
         miPelicula.evalua(8.2);
         miPelicula.evalua(9);
-
-        System.out.println("Suma de las evaluciones: "+  miPelicula.sumaDeEvaluaciones);
-        System.out.println("Total de evaluaciones de la pelicula: " + miPelicula.totalDeLasEvaluaciones);
+        System.out.println("Total de evaluaciones de la pelicula: " + miPelicula.getTotalDeLasEvaluaciones());
         System.out.println("Media de evaluaciones: "+ miPelicula.calculaMedia());
 
+        Serie casaDragon = new Serie();
+        casaDragon.setNombre("Casa del Dragon");
+        casaDragon.setFechaDeLanzamiento(2022);
+        casaDragon.setTemporadas(2);
+        casaDragon.setMinutosPorEpisodios(55);
+        casaDragon.setEpisodiosPorTemporada(10);
+        System.out.println(casaDragon.getDuracionEnMinutos());
+        casaDragon.muestraFichaTecnica();
 
-        System.out.println("");
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.nombre = "Matrix";
-        otraPelicula.fechaDeLanzamiento = 1999;
-        otraPelicula.duracionEnMinutos = 120;
 
-        otraPelicula.muestraFichaTecnica();
 
-        otraPelicula.evalua(8.2);
-        otraPelicula.evalua(8);
-        otraPelicula.evalua(10);
-        otraPelicula.evalua(7.8);
 
-        System.out.println("Suma de las evaluciones: " + otraPelicula.sumaDeEvaluaciones);
-        System.out.println("Total de evaluaciones de la pelicula: " + otraPelicula.totalDeLasEvaluaciones);
-        System.out.println("La media en calificaciones de la pelicula es es de : "+ otraPelicula.calculaMedia());
+
+
+//        com.aluracursos.screenmatch.modelos.Pelicula otraPelicula = new com.aluracursos.screenmatch.modelos.Pelicula();
+//        otraPelicula.nombre = "Matrix";
+//        otraPelicula.fechaDeLanzamiento = 1999;
+//        otraPelicula.duracionEnMinutos = 120;
+//
+//        otraPelicula.muestraFichaTecnica();
+//        System.out.println("Total de evaluaciones de la pelicula: " + otraPelicula.getTotalDeLasEvaluaciones());
+//        System.out.println("La media en calificaciones de la pelicula es es de : "+ otraPelicula.calculaMedia());
     }
 }
